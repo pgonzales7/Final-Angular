@@ -44,8 +44,8 @@
 
      
       <div class="mt-3">
-          <input type="button" class="btn btn-primary" [disabled]="registroform.invalid" (click)="login()"
-              value="Registro">
+        <button class="btn btn-primary" [disabled]="registroform.invalid" (click)="login()" mat-button (click)="openDialog()">Registro</button>
+        
       </div>
   </form>
   

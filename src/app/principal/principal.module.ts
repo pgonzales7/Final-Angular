@@ -8,6 +8,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import { MaterialModule } from '../material.module';
+import { MensajeComponent } from './mensaje/mensaje.component';
 
 
 
@@ -17,7 +19,8 @@ import {MatButtonModule} from '@angular/material/button';
     NavbarComponent,
     HomeComponent,
     ContactComponent,
-    UserComponent
+    UserComponent,
+    MensajeComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +28,8 @@ import {MatButtonModule} from '@angular/material/button';
     FormsModule,
     MatMenuModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
     
   ],
   exports:[

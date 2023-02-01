@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { MensajeComponent } from '../mensaje/mensaje.component';
 
 @Component({
   selector: 'app-contact',
@@ -8,7 +10,14 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class ContactComponent{
 
-  constructor(private formbuilder: FormBuilder) { }
+  constructor(private formbuilder: FormBuilder,public dialog: MatDialog) { }
+  openDialog() {
+    const dialogRef = this.dialog.open(MensajeComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   registroform = this.formbuilder.group({
     nombre: ['', {
@@ -29,21 +38,18 @@ export class ContactComponent{
         Validators.email,
       ]
     }],
-    website: ["", {
-      validators: [
-        Validators.required
-      ]
-    }],
+  
 
   })
 
   get nombre() { return this.registroform.get('nombre') }
   get apellido() { return this.registroform.get('apellido') }
   get email() { return this.registroform.get('email') }
-  get website() { return this.registroform.get('website') }
+  
 
   login() {
 
   }
+  
 
 }
