@@ -1,0 +1,53 @@
+<section class="col-3 container mt-5">
+  <form [formGroup]="registroform">
+      <h2>Registro</h2>
+      <section class="mt-3">
+          <label>Nombre:</label>
+          <input formControlName="nombre" type="text" class="form-control">
+          <section *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)">
+              <section *ngIf="nombre?.errors?.['required']" class="alert alert-danger">
+                  El nombre es obligatorio
+              </section>
+              <section *ngIf="nombre?.errors?.['minlength']" class="alert alert-danger">
+                  Requiere un minimo de 3 carácteres
+              </section>
+              <section *ngIf="nombre?.errors?.['maxlength']" class="alert alert-danger">
+                  Requiere un máximo de 25 carácteres
+              </section>
+          </section>
+      </section>
+      <section class="mt-3">
+          <label>Apellido:</label>
+          <input formControlName="apellido" type="text" minlength="3" class="form-control">
+          <section *ngIf="apellido?.invalid && (apellido?.dirty || apellido?.touched)">
+              <section *ngIf="apellido?.errors?.['required']" class="alert alert-danger">
+                  El apellido es obligatorio
+              </section>
+              <section *ngIf="apellido?.errors?.['minlength']" class="alert alert-danger">
+                  Requiere un minimo de 2 carácteres
+              </section>
+          </section>
+      </section>
+
+      <section class="mt-3">
+          <label>Email:</label>
+          <input formControlName="email" type="text" minlength="2" class="form-control">
+          <section *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+              <section *ngIf="email?.errors?.['required']" class="alert alert-danger">
+                  El email es obligatorio
+              </section>
+              <section *ngIf="email?.errors?.['email']" class="alert alert-danger">
+                  El email es inválido
+              </section>
+          </section>
+      </section>
+
+     
+      <div class="mt-3">
+          <input type="button" class="btn btn-primary" [disabled]="registroform.invalid" (click)="login()"
+              value="Registro">
+      </div>
+  </form>
+  
+
+

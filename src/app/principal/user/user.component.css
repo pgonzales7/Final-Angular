@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+*{
+    --color-verde: #7e93ff;
+    --color-verde-claro: #68dfe5;
+    --color-piel: #f1b280;
+    --color-azul: #395be0;
+    --color-amarillo: #fae053;
+}
+table{
+    width: 60%;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+}
+td{
+    text-align: center;
+    background-color: var(--color-verde-claro);
+    color: black;
+    font-weight: 700;
+    padding: 8px;
+}
+th{
+    background-color: var(--color-verde);
+    color: aliceblue;
+    padding: 8px;
+    font-weight: 900;
+}
